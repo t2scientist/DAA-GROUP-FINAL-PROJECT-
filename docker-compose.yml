@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  exam-seating:
+    build: .
+    container_name: exam-seating
+    ports:
+      - "8501:8501"
+    environment:
+      - STREAMLIT_SERVER_PORT=8501
+      - STREAMLIT_SERVER_ADDRESS=0.0.0.0
+    # Optional: persist a workspace folder
+    volumes:
+      - ./workspace:/app/workspace
